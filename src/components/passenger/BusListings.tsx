@@ -189,15 +189,6 @@ export const BusListings: React.FC<BusListingsProps> = ({
                       {format(arrivalTime, 'HH:mm')}
                     </div>
                     <div className="flex items-center justify-end space-x-2 mb-2">
-                      <span 
-                        className={`status-badge ${
-                          occupancyInfo.color === 'green' ? 'bg-emerald-100 text-emerald-600' :
-                          occupancyInfo.color === 'yellow' ? 'bg-amber-100 text-amber-600' :
-                          'bg-rose-100 text-rose-600'
-                        }`}
-                      >
-                        {occupancyInfo.text}
-                      </span>
                     </div>
                   </div>
                 </div>
