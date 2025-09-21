@@ -188,9 +188,6 @@ export const BusListings: React.FC<BusListingsProps> = ({
                       </div>
                       
                       <div className="bg-emerald-50 px-4 py-2 rounded-xl">
-                        <span className="text-xl font-bold text-emerald-600">
-                          ${route?.fare.toFixed(2)}
-                        </span>
                       </div>
                     </div>
                   </div>
