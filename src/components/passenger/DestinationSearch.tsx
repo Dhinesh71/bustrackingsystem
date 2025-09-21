@@ -143,12 +143,10 @@ export const DestinationSearch: React.FC<DestinationSearchProps> = ({
             />
             <button
               onClick={getCurrentLocation}
-              className="absolute inset-y-0 right-0 pr-4 flex items-center text-blue-600 hover:text-blue-700 transition-colors"
+              className="absolute inset-y-0 right-0 pr-4 flex items-center text-blue-600 hover:text-blue-700 transition-colors p-2 hover:bg-blue-50 rounded-lg"
               title="Use current location"
             >
-              <div className="p-2 hover:bg-blue-50 rounded-lg transition-colors">
-                <Navigation className="h-5 w-5" />
-              </div>
+              <Navigation className="h-5 w-5" />
             </button>
             
             {showFromSuggestions && fromSuggestions.length > 0 && (
