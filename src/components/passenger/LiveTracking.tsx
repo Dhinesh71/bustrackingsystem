@@ -12,10 +12,19 @@ interface LiveTrackingProps {
 
 // Sample bus stops for the route
 const routeStops: BusStop[] = [
-  { id: '1', name: 'Central Station', address: '123 Main St', latitude: 40.7128, longitude: -74.0060, routes: ['A1'] },
-  { id: '2', name: 'City Hall', address: '456 Government Ave', latitude: 40.7180, longitude: -74.0000, routes: ['A1'] },
-  { id: '3', name: 'Shopping Center', address: '789 Commerce St', latitude: 40.7250, longitude: -73.9950, routes: ['A1'] },
-  { id: '4', name: 'University Campus', address: '321 College Ave', latitude: 40.7320, longitude: -73.9900, routes: ['A1'] },
+  { id: '1', name: 'Boothapadi', address: 'Boothapadi, Erode District', latitude: 11.3410, longitude: 77.7172, routes: ['1'] },
+  { id: '2', name: 'Poonachi', address: 'Poonachi, Erode District', latitude: 11.3420, longitude: 77.7180, routes: ['1'] },
+  { id: '3', name: 'Chithar', address: 'Chithar, Erode District', latitude: 11.3430, longitude: 77.7190, routes: ['1'] },
+  { id: '4', name: 'Bhavani BS', address: 'Bhavani Bus Stand, Erode District', latitude: 11.4448, longitude: 77.6882, routes: ['1'] },
+  { id: '5', name: 'Kalingarayanpalayam', address: 'Kalingarayanpalayam, Erode District', latitude: 11.4500, longitude: 77.6900, routes: ['1'] },
+  { id: '6', name: 'Lakshminagar', address: 'Lakshminagar, Erode District', latitude: 11.4520, longitude: 77.6920, routes: ['1'] },
+  { id: '7', name: 'R.N.pudhur', address: 'R.N.pudhur, Erode District', latitude: 11.4600, longitude: 77.7000, routes: ['1'] },
+  { id: '8', name: 'Agraharam', address: 'Agraharam, Erode District', latitude: 11.4650, longitude: 77.7050, routes: ['1'] },
+  { id: '9', name: 'Erode BS', address: 'Erode Bus Stand, Erode District', latitude: 11.3410, longitude: 77.7172, routes: ['1'] },
+  { id: '10', name: 'Savitha & G.H', address: 'Savitha & G.H, Erode District', latitude: 11.3420, longitude: 77.7180, routes: ['1'] },
+  { id: '11', name: 'Diesel Shed', address: 'Diesel Shed, Erode District', latitude: 11.3430, longitude: 77.7190, routes: ['1'] },
+  { id: '12', name: 'ITI & K.K.Nagar', address: 'ITI & K.K.Nagar, Erode District', latitude: 11.3440, longitude: 77.7200, routes: ['1'] },
+  { id: '13', name: 'Mpnmjec', address: 'Mpnmjec College, Erode District', latitude: 11.3450, longitude: 77.7210, routes: ['1'] },
 ];
 
 export const LiveTracking: React.FC<LiveTrackingProps> = ({

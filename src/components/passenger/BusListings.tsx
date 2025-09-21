@@ -13,22 +13,12 @@ interface BusListingsProps {
 const sampleRoutes: Route[] = [
   {
     id: '1',
-    name: 'Route A1',
-    code: 'A1',
+    name: 'Boothapadi - Mpnmjec Route',
+    code: '1',
     color: '#2563EB',
     stops: [],
-    estimated_duration: 45,
-    fare: 2.50,
-    status: 'active'
-  },
-  {
-    id: '2',
-    name: 'Route B2',
-    code: 'B2',
-    color: '#059669',
-    stops: [],
-    estimated_duration: 35,
-    fare: 2.00,
+    estimated_duration: 130,
+    fare: 15.00,
     status: 'active'
   }
 ];
@@ -36,46 +26,16 @@ const sampleRoutes: Route[] = [
 const sampleBuses: Bus[] = [
   {
     id: '1',
-    number: '101',
+    number: '1',
     route_id: '1',
-    driver_name: 'John Smith',
-    capacity: 50,
-    current_occupancy: 23,
-    latitude: 40.7128,
-    longitude: -74.0060,
-    speed: 25,
+    driver_name: 'Raman Kumar',
+    capacity: 45,
+    current_occupancy: 18,
+    latitude: 11.3410,
+    longitude: 77.7172,
+    speed: 35,
     heading: 90,
     fuel_level: 75,
-    status: 'active',
-    last_updated: new Date().toISOString()
-  },
-  {
-    id: '2',
-    number: '102',
-    route_id: '1',
-    driver_name: 'Jane Doe',
-    capacity: 50,
-    current_occupancy: 38,
-    latitude: 40.7589,
-    longitude: -73.9851,
-    speed: 30,
-    heading: 180,
-    fuel_level: 60,
-    status: 'active',
-    last_updated: new Date().toISOString()
-  },
-  {
-    id: '3',
-    number: '201',
-    route_id: '2',
-    driver_name: 'Mike Johnson',
-    capacity: 45,
-    current_occupancy: 15,
-    latitude: 40.7505,
-    longitude: -73.9934,
-    speed: 22,
-    heading: 270,
-    fuel_level: 90,
     status: 'active',
     last_updated: new Date().toISOString()
   }
@@ -94,8 +54,8 @@ export const BusListings: React.FC<BusListingsProps> = ({
   // Calculate estimated arrival times (simplified)
   const calculateArrivalTime = (bus: Bus) => {
     const now = new Date();
-    // Simulate different arrival times based on bus position
-    const minutesToAdd = 5 + (parseInt(bus.number) % 20);
+    // Simulate arrival times based on current schedule
+    const minutesToAdd = 8 + Math.floor(Math.random() * 15); // 8-23 minutes
     return addMinutes(now, minutesToAdd);
   };
 

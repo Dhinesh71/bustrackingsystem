@@ -8,16 +8,24 @@ interface DestinationSearchProps {
 
 // Sample bus stops data
 const sampleStops: BusStop[] = [
-  { id: '1', name: 'Central Station', address: '123 Main St', latitude: 40.7128, longitude: -74.0060, routes: ['A1', 'B2'] },
-  { id: '2', name: 'University Campus', address: '456 College Ave', latitude: 40.7589, longitude: -73.9851, routes: ['B2', 'C3'] },
-  { id: '3', name: 'Shopping Mall', address: '789 Commerce Blvd', latitude: 40.7505, longitude: -73.9934, routes: ['A1', 'C3'] },
-  { id: '4', name: 'Airport Terminal', address: '321 Sky Way', latitude: 40.6892, longitude: -74.1745, routes: ['D4'] },
-  { id: '5', name: 'City Hospital', address: '654 Health St', latitude: 40.7831, longitude: -73.9712, routes: ['A1', 'D4'] },
+  { id: '1', name: 'Boothapadi', address: 'Boothapadi, Erode District', latitude: 11.3410, longitude: 77.7172, routes: ['1'] },
+  { id: '2', name: 'Poonachi', address: 'Poonachi, Erode District', latitude: 11.3420, longitude: 77.7180, routes: ['1'] },
+  { id: '3', name: 'Chithar', address: 'Chithar, Erode District', latitude: 11.3430, longitude: 77.7190, routes: ['1'] },
+  { id: '4', name: 'Bhavani BS', address: 'Bhavani Bus Stand, Erode District', latitude: 11.4448, longitude: 77.6882, routes: ['1'] },
+  { id: '5', name: 'Kalingarayanpalayam', address: 'Kalingarayanpalayam, Erode District', latitude: 11.4500, longitude: 77.6900, routes: ['1'] },
+  { id: '6', name: 'Lakshminagar', address: 'Lakshminagar, Erode District', latitude: 11.4520, longitude: 77.6920, routes: ['1'] },
+  { id: '7', name: 'R.N.pudhur', address: 'R.N.pudhur, Erode District', latitude: 11.4600, longitude: 77.7000, routes: ['1'] },
+  { id: '8', name: 'Agraharam', address: 'Agraharam, Erode District', latitude: 11.4650, longitude: 77.7050, routes: ['1'] },
+  { id: '9', name: 'Erode BS', address: 'Erode Bus Stand, Erode District', latitude: 11.3410, longitude: 77.7172, routes: ['1'] },
+  { id: '10', name: 'Savitha & G.H', address: 'Savitha & G.H, Erode District', latitude: 11.3420, longitude: 77.7180, routes: ['1'] },
+  { id: '11', name: 'Diesel Shed', address: 'Diesel Shed, Erode District', latitude: 11.3430, longitude: 77.7190, routes: ['1'] },
+  { id: '12', name: 'ITI & K.K.Nagar', address: 'ITI & K.K.Nagar, Erode District', latitude: 11.3440, longitude: 77.7200, routes: ['1'] },
+  { id: '13', name: 'Mpnmjec', address: 'Mpnmjec College, Erode District', latitude: 11.3450, longitude: 77.7210, routes: ['1'] },
 ];
 
 const recentSearches = [
-  { from: 'Central Station', to: 'University Campus' },
-  { from: 'Shopping Mall', to: 'Airport Terminal' },
+  { from: 'Boothapadi', to: 'Mpnmjec' },
+  { from: 'Erode BS', to: 'Bhavani BS' },
 ];
 
 export const DestinationSearch: React.FC<DestinationSearchProps> = ({ 

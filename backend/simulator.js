@@ -36,16 +36,21 @@ class BusSimulator {
   }
 
   getDefaultRoute() {
-    // Default route around Manhattan (simplified)
+    // Route 1: Boothapadi to Mpnmjec
     return [
-      { lat: 40.7128, lng: -74.0060, name: "Central Station" },
-      { lat: 40.7282, lng: -74.0776, name: "Tech District" },
-      { lat: 40.7505, lng: -73.9934, name: "Shopping Mall" },
-      { lat: 40.7589, lng: -73.9851, name: "University Campus" },
-      { lat: 40.7831, lng: -73.9712, name: "City Hospital" },
-      { lat: 40.7589, lng: -73.9851, name: "University Campus" },
-      { lat: 40.7505, lng: -73.9934, name: "Shopping Mall" },
-      { lat: 40.7282, lng: -74.0776, name: "Tech District" }
+      { lat: 11.3410, lng: 77.7172, name: "Boothapadi" },
+      { lat: 11.3420, lng: 77.7180, name: "Poonachi" },
+      { lat: 11.3430, lng: 77.7190, name: "Chithar" },
+      { lat: 11.4448, lng: 77.6882, name: "Bhavani BS" },
+      { lat: 11.4500, lng: 77.6900, name: "Kalingarayanpalayam" },
+      { lat: 11.4520, lng: 77.6920, name: "Lakshminagar" },
+      { lat: 11.4600, lng: 77.7000, name: "R.N.pudhur" },
+      { lat: 11.4650, lng: 77.7050, name: "Agraharam" },
+      { lat: 11.3410, lng: 77.7172, name: "Erode BS" },
+      { lat: 11.3420, lng: 77.7180, name: "Savitha & G.H" },
+      { lat: 11.3430, lng: 77.7190, name: "Diesel Shed" },
+      { lat: 11.3440, lng: 77.7200, name: "ITI & K.K.Nagar" },
+      { lat: 11.3450, lng: 77.7210, name: "Mpnmjec" }
     ];
   }
 
@@ -335,44 +340,28 @@ class SimulationManager {
 async function main() {
   const manager = new SimulationManager();
 
-  // Configure buses (these should match your database entries)
+  // Configure bus number 1 (update with actual UUID from database)
   const busConfigs = [
     {
-      busId: '00000000-0000-0000-0000-000000000001', // Replace with actual UUIDs from your database
+      busId: '00000000-0000-0000-0000-000000000001', // Replace with actual UUID from database
       deviceId: 'GPS-DEVICE-001',
-      busNumber: '101',
-      routeId: 'A1',
+      busNumber: '1',
+      routeId: '1',
       updateInterval: 10000,
       route: [
-        { lat: 40.7128, lng: -74.0060, name: "Central Station" },
-        { lat: 40.7282, lng: -74.0776, name: "Tech District" },
-        { lat: 40.7505, lng: -73.9934, name: "Shopping Mall" },
-        { lat: 40.7589, lng: -73.9851, name: "University Campus" }
-      ]
-    },
-    {
-      busId: '00000000-0000-0000-0000-000000000002',
-      deviceId: 'GPS-DEVICE-002',
-      busNumber: '102',
-      routeId: 'A1',
-      updateInterval: 12000,
-      route: [
-        { lat: 40.7589, lng: -73.9851, name: "University Campus" },
-        { lat: 40.7831, lng: -73.9712, name: "City Hospital" },
-        { lat: 40.7128, lng: -74.0060, name: "Central Station" },
-        { lat: 40.7282, lng: -74.0776, name: "Tech District" }
-      ]
-    },
-    {
-      busId: '00000000-0000-0000-0000-000000000003',
-      deviceId: 'GPS-DEVICE-003',
-      busNumber: '201',
-      routeId: 'B2',
-      updateInterval: 15000,
-      route: [
-        { lat: 40.7589, lng: -73.9851, name: "University Campus" },
-        { lat: 40.7831, lng: -73.9712, name: "City Hospital" },
-        { lat: 40.7128, lng: -74.0060, name: "Central Station" }
+        { lat: 11.3410, lng: 77.7172, name: "Boothapadi" },
+        { lat: 11.3420, lng: 77.7180, name: "Poonachi" },
+        { lat: 11.3430, lng: 77.7190, name: "Chithar" },
+        { lat: 11.4448, lng: 77.6882, name: "Bhavani BS" },
+        { lat: 11.4500, lng: 77.6900, name: "Kalingarayanpalayam" },
+        { lat: 11.4520, lng: 77.6920, name: "Lakshminagar" },
+        { lat: 11.4600, lng: 77.7000, name: "R.N.pudhur" },
+        { lat: 11.4650, lng: 77.7050, name: "Agraharam" },
+        { lat: 11.3410, lng: 77.7172, name: "Erode BS" },
+        { lat: 11.3420, lng: 77.7180, name: "Savitha & G.H" },
+        { lat: 11.3430, lng: 77.7190, name: "Diesel Shed" },
+        { lat: 11.3440, lng: 77.7200, name: "ITI & K.K.Nagar" },
+        { lat: 11.3450, lng: 77.7210, name: "Mpnmjec" }
       ]
     }
   ];

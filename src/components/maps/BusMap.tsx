@@ -63,7 +63,7 @@ export const BusMap: React.FC<BusMapProps> = ({
   stops = [],
   selectedBus,
   onBusSelect,
-  center = [40.7128, -74.0060], // Default to NYC
+  center = [11.3410, 77.7172], // Default to Erode area
   zoom = 13,
   height = '500px'
 }) => {

@@ -73,43 +73,13 @@ class DatabaseSetup {
 
     const routesData = [
       {
-        name: 'Downtown Express',
-        code: 'A1',
+        name: 'Boothapadi - Mpnmjec Route',
+        code: '1',
         color: '#2563EB',
-        description: 'Express service connecting downtown area with major business districts',
-        total_distance: 15.5,
-        estimated_duration: 45,
-        fare: 2.50,
-        status: 'active'
-      },
-      {
-        name: 'University Loop',
-        code: 'B2',
-        color: '#059669',
-        description: 'Circular route serving university campus and surrounding areas',
-        total_distance: 12.3,
-        estimated_duration: 35,
-        fare: 2.00,
-        status: 'active'
-      },
-      {
-        name: 'Airport Shuttle',
-        code: 'C3',
-        color: '#DC2626',
-        description: 'Direct service between city center and airport terminal',
-        total_distance: 25.8,
-        estimated_duration: 60,
-        fare: 5.00,
-        status: 'active'
-      },
-      {
-        name: 'Shopping Circuit',
-        code: 'D4',
-        color: '#7C3AED',
-        description: 'Connects major shopping centers and retail districts',
-        total_distance: 8.7,
-        estimated_duration: 25,
-        fare: 1.50,
+        description: 'Daily route from Boothapadi to Mpnmjec College via Erode Bus Stand',
+        total_distance: 25.2,
+        estimated_duration: 130,
+        fare: 15.00,
         status: 'active'
       }
     ];
@@ -130,74 +100,119 @@ class DatabaseSetup {
 
     const stopsData = [
       {
-        name: 'Central Station',
-        code: 'CS01',
-        latitude: 40.7128,
-        longitude: -74.0060,
-        address: '123 Main Street, Downtown',
-        amenities: ['shelter', 'bench', 'digital_display', 'wheelchair_accessible'],
+        name: 'Boothapadi',
+        code: 'BP01',
+        latitude: 11.3410,
+        longitude: 77.7172,
+        address: 'Boothapadi, Erode District',
+        amenities: ['shelter', 'bench'],
+        accessibility_features: ['wheelchair_ramp']
+      },
+      {
+        name: 'Poonachi',
+        code: 'PN01',
+        latitude: 11.3420,
+        longitude: 77.7180,
+        address: 'Poonachi, Erode District',
+        amenities: ['shelter', 'bench'],
+        accessibility_features: ['wheelchair_ramp', 'audio_announcements']
+      },
+      {
+        name: 'Chithar',
+        code: 'CH01',
+        latitude: 11.3430,
+        longitude: 77.7190,
+        address: 'Chithar, Erode District',
+        amenities: ['shelter', 'bench'],
+        accessibility_features: ['wheelchair_ramp']
+      },
+      {
+        name: 'Bhavani BS',
+        code: 'BB01',
+        latitude: 11.4448,
+        longitude: 77.6882,
+        address: 'Bhavani Bus Stand, Erode District',
+        amenities: ['shelter', 'bench', 'digital_display', 'ticket_counter'],
+        accessibility_features: ['wheelchair_ramp', 'audio_announcements']
+      },
+      {
+        name: 'Kalingarayanpalayam',
+        code: 'KP01',
+        latitude: 11.4500,
+        longitude: 77.6900,
+        address: 'Kalingarayanpalayam, Erode District',
+        amenities: ['shelter', 'bench'],
+        accessibility_features: ['wheelchair_ramp']
+      },
+      {
+        name: 'Lakshminagar',
+        code: 'LN01',
+        latitude: 11.4520,
+        longitude: 77.6920,
+        address: 'Lakshminagar, Erode District',
+        amenities: ['shelter', 'bench'],
+        accessibility_features: ['wheelchair_ramp', 'audio_announcements']
+      },
+      {
+        name: 'R.N.pudhur',
+        code: 'RN01',
+        latitude: 11.4600,
+        longitude: 77.7000,
+        address: 'R.N.pudhur, Erode District',
+        amenities: ['shelter', 'bench'],
+        accessibility_features: ['wheelchair_ramp']
+      },
+      {
+        name: 'Agraharam',
+        code: 'AG01',
+        latitude: 11.4650,
+        longitude: 77.7050,
+        address: 'Agraharam, Erode District',
+        amenities: ['shelter', 'bench'],
+        accessibility_features: ['wheelchair_ramp']
+      },
+      {
+        name: 'Erode BS',
+        code: 'EB01',
+        latitude: 11.3410,
+        longitude: 77.7172,
+        address: 'Erode Bus Stand, Erode District',
+        amenities: ['shelter', 'bench', 'digital_display', 'ticket_counter', 'waiting_room'],
         accessibility_features: ['wheelchair_ramp', 'audio_announcements', 'braille_signage']
       },
       {
-        name: 'University Campus',
-        code: 'UC01',
-        latitude: 40.7589,
-        longitude: -73.9851,
-        address: '456 College Avenue',
-        amenities: ['shelter', 'bench', 'digital_display', 'bike_rack'],
-        accessibility_features: ['wheelchair_ramp', 'audio_announcements']
+        name: 'Savitha & G.H',
+        code: 'SG01',
+        latitude: 11.3420,
+        longitude: 77.7180,
+        address: 'Savitha & G.H, Erode District',
+        amenities: ['shelter', 'bench'],
+        accessibility_features: ['wheelchair_ramp']
       },
       {
-        name: 'Shopping Mall',
-        code: 'SM01',
-        latitude: 40.7505,
-        longitude: -73.9934,
-        address: '789 Commerce Boulevard',
-        amenities: ['shelter', 'bench', 'digital_display', 'parking'],
-        accessibility_features: ['wheelchair_ramp', 'tactile_paving']
+        name: 'Diesel Shed',
+        code: 'DS01',
+        latitude: 11.3430,
+        longitude: 77.7190,
+        address: 'Diesel Shed, Erode District',
+        amenities: ['shelter', 'bench'],
+        accessibility_features: ['wheelchair_ramp']
       },
       {
-        name: 'Airport Terminal',
-        code: 'AT01',
-        latitude: 40.6892,
-        longitude: -74.1745,
-        address: '321 Sky Way',
-        amenities: ['shelter', 'bench', 'digital_display', 'luggage_storage', 'wifi'],
-        accessibility_features: ['wheelchair_ramp', 'audio_announcements', 'braille_signage', 'elevator_access']
+        name: 'ITI & K.K.Nagar',
+        code: 'IK01',
+        latitude: 11.3440,
+        longitude: 77.7200,
+        address: 'ITI & K.K.Nagar, Erode District',
+        amenities: ['shelter', 'bench'],
+        accessibility_features: ['wheelchair_ramp']
       },
       {
-        name: 'City Hospital',
-        code: 'CH01',
-        latitude: 40.7831,
-        longitude: -73.9712,
-        address: '654 Health Street',
-        amenities: ['shelter', 'bench', 'digital_display', 'emergency_phone'],
-        accessibility_features: ['wheelchair_ramp', 'audio_announcements', 'priority_seating']
-      },
-      {
-        name: 'Tech District',
-        code: 'TD01',
-        latitude: 40.7282,
-        longitude: -74.0776,
-        address: '987 Innovation Drive',
-        amenities: ['shelter', 'bench', 'digital_display', 'bike_rack', 'wifi'],
-        accessibility_features: ['wheelchair_ramp', 'audio_announcements']
-      },
-      {
-        name: 'Sports Complex',
-        code: 'SC01',
-        latitude: 40.7400,
-        longitude: -73.9900,
-        address: '555 Athletic Way',
-        amenities: ['shelter', 'bench', 'digital_display', 'large_capacity'],
-        accessibility_features: ['wheelchair_ramp', 'wide_platform']
-      },
-      {
-        name: 'Residential Plaza',
-        code: 'RP01',
-        latitude: 40.7650,
-        longitude: -73.9800,
-        address: '222 Community Street',
+        name: 'Mpnmjec',
+        code: 'MP01',
+        latitude: 11.3450,
+        longitude: 77.7210,
+        address: 'Mpnmjec College, Erode District',
         amenities: ['shelter', 'bench', 'lighting'],
         accessibility_features: ['wheelchair_ramp']
       }
@@ -219,21 +234,29 @@ class DatabaseSetup {
 
     const routeStopsData = [];
 
-    // Route A1 (Downtown Express)
-    const routeA1 = this.routes.find(r => r.code === 'A1');
-    const a1Stops = [
-      { code: 'CS01', order: 1, distance: 0.0, time: 0 },
-      { code: 'TD01', order: 2, distance: 3.2, time: 8 },
-      { code: 'SM01', order: 3, distance: 7.8, time: 12 },
-      { code: 'UC01', order: 4, distance: 12.1, time: 15 },
-      { code: 'SC01', order: 5, distance: 15.5, time: 18 }
+    // Route 1 (Boothapadi - Mpnmjec)
+    const route1 = this.routes.find(r => r.code === '1');
+    const route1Stops = [
+      { code: 'BP01', order: 1, distance: 0.0, time: 0 },    // Boothapadi 7:10
+      { code: 'PN01', order: 2, distance: 2.5, time: 10 },  // Poonachi 7:20
+      { code: 'CH01', order: 3, distance: 5.0, time: 20 },  // Chithar 7:30
+      { code: 'BB01', order: 4, distance: 8.5, time: 30 },  // Bhavani BS 7:40
+      { code: 'KP01', order: 5, distance: 12.0, time: 40 }, // Kalingarayanpalayam 7:50
+      { code: 'LN01', order: 6, distance: 14.0, time: 45 }, // Lakshminagar 7:55
+      { code: 'RN01', order: 7, distance: 18.0, time: 60 }, // R.N.pudhur 8:10
+      { code: 'AG01', order: 8, distance: 19.5, time: 65 }, // Agraharam 8:15
+      { code: 'EB01', order: 9, distance: 22.0, time: 80 }, // Erode BS 8:30
+      { code: 'SG01', order: 10, distance: 22.5, time: 85 }, // Savitha & G.H 8:35
+      { code: 'DS01', order: 11, distance: 23.0, time: 90 }, // Diesel Shed 8:40
+      { code: 'IK01', order: 12, distance: 23.5, time: 95 }, // ITI & K.K.Nagar 8:45
+      { code: 'MP01', order: 13, distance: 25.2, time: 130 } // Mpnmjec 9:20
     ];
 
-    for (const stop of a1Stops) {
+    for (const stop of route1Stops) {
       const busStop = this.stops.find(s => s.code === stop.code);
       if (busStop) {
         routeStopsData.push({
-          route_id: routeA1.id,
+          route_id: route1.id,
           stop_id: busStop.id,
           stop_order: stop.order,
           distance_from_start: stop.distance,
@@ -242,48 +265,6 @@ class DatabaseSetup {
       }
     }
 
-    // Route B2 (University Loop)
-    const routeB2 = this.routes.find(r => r.code === 'B2');
-    const b2Stops = [
-      { code: 'UC01', order: 1, distance: 0.0, time: 0 },
-      { code: 'CH01', order: 2, distance: 4.5, time: 10 },
-      { code: 'RP01', order: 3, distance: 7.2, time: 15 },
-      { code: 'CS01', order: 4, distance: 12.3, time: 25 }
-    ];
-
-    for (const stop of b2Stops) {
-      const busStop = this.stops.find(s => s.code === stop.code);
-      if (busStop) {
-        routeStopsData.push({
-          route_id: routeB2.id,
-          stop_id: busStop.id,
-          stop_order: stop.order,
-          distance_from_start: stop.distance,
-          estimated_travel_time: stop.time
-        });
-      }
-    }
-
-    // Route C3 (Airport Shuttle)
-    const routeC3 = this.routes.find(r => r.code === 'C3');
-    const c3Stops = [
-      { code: 'CS01', order: 1, distance: 0.0, time: 0 },
-      { code: 'SM01', order: 2, distance: 8.5, time: 15 },
-      { code: 'AT01', order: 3, distance: 25.8, time: 45 }
-    ];
-
-    for (const stop of c3Stops) {
-      const busStop = this.stops.find(s => s.code === stop.code);
-      if (busStop) {
-        routeStopsData.push({
-          route_id: routeC3.id,
-          stop_id: busStop.id,
-          stop_order: stop.order,
-          distance_from_start: stop.distance,
-          estimated_travel_time: stop.time
-        });
-      }
-    }
 
     const { data, error } = await supabase
       .from('route_stops')
@@ -300,79 +281,19 @@ class DatabaseSetup {
 
     const busesData = [
       {
-        number: '101',
-        license_plate: 'BUS-101-NY',
-        route_id: this.routes.find(r => r.code === 'A1').id,
-        driver_name: 'John Smith',
-        driver_phone: '+1-555-0101',
-        capacity: 50,
-        current_occupancy: 0,
-        fuel_capacity: 200.00,
-        fuel_level: 85.5,
-        last_maintenance_date: '2024-01-15',
-        next_maintenance_date: '2024-04-15',
-        status: 'active',
-        device_id: 'GPS-DEVICE-001'
-      },
-      {
-        number: '102',
-        license_plate: 'BUS-102-NY',
-        route_id: this.routes.find(r => r.code === 'A1').id,
-        driver_name: 'Jane Doe',
-        driver_phone: '+1-555-0102',
-        capacity: 50,
-        current_occupancy: 0,
-        fuel_capacity: 200.00,
-        fuel_level: 92.3,
-        last_maintenance_date: '2024-01-20',
-        next_maintenance_date: '2024-04-20',
-        status: 'active',
-        device_id: 'GPS-DEVICE-002'
-      },
-      {
-        number: '201',
-        license_plate: 'BUS-201-NY',
-        route_id: this.routes.find(r => r.code === 'B2').id,
-        driver_name: 'Mike Johnson',
-        driver_phone: '+1-555-0201',
+        number: '1',
+        license_plate: 'TN-32-BUS-001',
+        route_id: this.routes.find(r => r.code === '1').id,
+        driver_name: 'Raman Kumar',
+        driver_phone: '+91-9876543210',
         capacity: 45,
         current_occupancy: 0,
         fuel_capacity: 180.00,
-        fuel_level: 78.9,
-        last_maintenance_date: '2024-01-10',
-        next_maintenance_date: '2024-04-10',
+        fuel_level: 85.5,
+        last_maintenance_date: '2024-12-01',
+        next_maintenance_date: '2024-03-01',
         status: 'active',
-        device_id: 'GPS-DEVICE-003'
-      },
-      {
-        number: '301',
-        license_plate: 'BUS-301-NY',
-        route_id: this.routes.find(r => r.code === 'C3').id,
-        driver_name: 'Sarah Wilson',
-        driver_phone: '+1-555-0301',
-        capacity: 60,
-        current_occupancy: 0,
-        fuel_capacity: 250.00,
-        fuel_level: 95.1,
-        last_maintenance_date: '2024-01-25',
-        next_maintenance_date: '2024-04-25',
-        status: 'active',
-        device_id: 'GPS-DEVICE-004'
-      },
-      {
-        number: '401',
-        license_plate: 'BUS-401-NY',
-        route_id: this.routes.find(r => r.code === 'D4').id,
-        driver_name: 'David Brown',
-        driver_phone: '+1-555-0401',
-        capacity: 40,
-        current_occupancy: 0,
-        fuel_capacity: 160.00,
-        fuel_level: 67.8,
-        last_maintenance_date: '2024-01-05',
-        next_maintenance_date: '2024-04-05',
-        status: 'maintenance',
-        device_id: 'GPS-DEVICE-005'
+        device_id: 'GPS-DEVICE-001'
       }
     ];
 
@@ -398,43 +319,31 @@ class DatabaseSetup {
 
     const schedulesData = [];
 
-    // Create schedules for each active bus
-    const activeBuses = this.buses.filter(b => b.status === 'active');
+    // Create schedule for bus number 1
+    const bus1 = this.buses.find(b => b.number === '1');
 
-    for (const bus of activeBuses) {
-      // Morning schedule
+    if (bus1) {
+      // Morning schedule - Boothapadi to Mpnmjec (7:10 AM - 9:20 AM)
       schedulesData.push({
-        route_id: bus.route_id,
-        bus_id: bus.id,
-        departure_time: '06:00:00',
-        arrival_time: '07:00:00',
+        route_id: bus1.route_id,
+        bus_id: bus1.id,
+        departure_time: '07:10:00',
+        arrival_time: '09:20:00',
         days_of_week: [1, 2, 3, 4, 5], // Monday to Friday
-        effective_date: '2024-01-01',
-        expiry_date: '2024-12-31',
+        effective_date: '2025-01-01',
+        expiry_date: '2025-12-31',
         is_active: true
       });
 
-      // Afternoon schedule
+      // Return trip schedule (if needed)
       schedulesData.push({
-        route_id: bus.route_id,
-        bus_id: bus.id,
-        departure_time: '14:00:00',
-        arrival_time: '15:00:00',
-        days_of_week: [1, 2, 3, 4, 5, 6, 7], // All days
-        effective_date: '2024-01-01',
-        expiry_date: '2024-12-31',
-        is_active: true
-      });
-
-      // Evening schedule
-      schedulesData.push({
-        route_id: bus.route_id,
-        bus_id: bus.id,
-        departure_time: '18:30:00',
-        arrival_time: '19:30:00',
+        route_id: bus1.route_id,
+        bus_id: bus1.id,
+        departure_time: '16:00:00',
+        arrival_time: '18:10:00',
         days_of_week: [1, 2, 3, 4, 5], // Monday to Friday
-        effective_date: '2024-01-01',
-        expiry_date: '2024-12-31',
+        effective_date: '2025-01-01',
+        expiry_date: '2025-12-31',
         is_active: true
       });
     }
