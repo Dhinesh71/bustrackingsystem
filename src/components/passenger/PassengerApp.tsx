@@ -36,12 +36,12 @@ export const PassengerApp: React.FC = () => {
     if (currentState === 'search') return null;
 
     return (
-      <div className="bg-white shadow-sm border-b border-gray-200 mb-6">
+      <div className="bg-blue-50 shadow-sm border-b border-blue-100 mb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-16">
             <button
               onClick={handleBack}
-              className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+              className="flex items-center text-blue-500 hover:text-blue-600 transition-colors"
             >
               <ArrowLeft className="h-5 w-5 mr-2" />
               Back
@@ -53,7 +53,7 @@ export const PassengerApp: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-blue-25" style={{ backgroundColor: '#f8fafc' }}>
       {renderHeader()}
       
       {currentState === 'search' && (

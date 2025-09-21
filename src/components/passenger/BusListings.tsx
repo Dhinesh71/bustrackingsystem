@@ -141,13 +141,13 @@ export const BusListings: React.FC<BusListingsProps> = ({
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <div className="bg-white rounded-lg shadow-lg">
+      <div className="bg-white rounded-xl shadow-md border border-blue-100">
         {/* Header */}
-        <div className="p-6 border-b border-gray-200">
+        <div className="p-6 border-b border-blue-100">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Available Buses</h2>
-              <p className="text-gray-600">
+              <h2 className="text-2xl font-bold text-slate-800 mb-2">Available Buses</h2>
+              <p className="text-slate-600">
                 From <span className="font-medium">{fromStop.name}</span> to <span className="font-medium">{toStop.name}</span>
               </p>
             </div>
@@ -155,12 +155,12 @@ export const BusListings: React.FC<BusListingsProps> = ({
             {/* Date Selector */}
             <div className="mt-4 md:mt-0">
               <div className="flex items-center space-x-2">
-                <Calendar className="h-5 w-5 text-gray-400" />
+                <Calendar className="h-5 w-5 text-slate-400" />
                 <input
                   type="date"
                   value={selectedDate}
                   onChange={(e) => setSelectedDate(e.target.value)}
-                  className="border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"
+                  className="border border-slate-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-300 bg-slate-50"
                 />
               </div>
             </div>
@@ -168,17 +168,17 @@ export const BusListings: React.FC<BusListingsProps> = ({
         </div>
 
         {/* Filters */}
-        <div className="p-6 border-b border-gray-200 bg-gray-50">
+        <div className="p-6 border-b border-blue-100 bg-blue-25" style={{ backgroundColor: '#f8fafc' }}>
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center space-x-2">
-              <Filter className="h-4 w-4 text-gray-600" />
-              <span className="text-sm font-medium text-gray-700">Filters:</span>
+              <Filter className="h-4 w-4 text-slate-500" />
+              <span className="text-sm font-medium text-slate-600">Filters:</span>
             </div>
             
             <select
               value={filterOccupancy}
               onChange={(e) => setFilterOccupancy(e.target.value as any)}
-              className="border border-gray-300 rounded-lg px-3 py-1 text-sm focus:ring-2 focus:ring-blue-500"
+              className="border border-slate-200 rounded-lg px-3 py-1 text-sm focus:ring-2 focus:ring-blue-300 bg-white"
             >
               <option value="all">All Occupancy</option>
               <option value="low">Comfortable</option>
@@ -189,7 +189,7 @@ export const BusListings: React.FC<BusListingsProps> = ({
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="border border-gray-300 rounded-lg px-3 py-1 text-sm focus:ring-2 focus:ring-blue-500"
+              className="border border-slate-200 rounded-lg px-3 py-1 text-sm focus:ring-2 focus:ring-blue-300 bg-white"
             >
               <option value="arrival">Sort by Arrival</option>
               <option value="occupancy">Sort by Occupancy</option>
@@ -198,7 +198,7 @@ export const BusListings: React.FC<BusListingsProps> = ({
         </div>
 
         {/* Bus List */}
-        <div className="divide-y divide-gray-200">
+        <div className="divide-y divide-slate-100">
           {filteredBuses.map((bus) => {
             const route = getRoute(bus.route_id);
             const arrivalTime = calculateArrivalTime(bus);
@@ -208,7 +208,7 @@ export const BusListings: React.FC<BusListingsProps> = ({
             return (
               <div
                 key={bus.id}
-                className="p-6 hover:bg-gray-50 transition-colors cursor-pointer"
+                className="p-6 hover:bg-blue-25 transition-colors cursor-pointer"
                 onClick={() => onBusSelect(bus)}
               >
                 <div className="flex items-center justify-between">
@@ -216,18 +216,18 @@ export const BusListings: React.FC<BusListingsProps> = ({
                   <div className="flex-1">
                     <div className="flex items-center space-x-4 mb-2">
                       <div 
-                        className="w-12 h-8 rounded flex items-center justify-center text-white text-sm font-bold"
-                        style={{ backgroundColor: route?.color || '#2563EB' }}
+                        className="w-12 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold shadow-sm"
+                        style={{ backgroundColor: route?.color || '#60a5fa' }}
                       >
                         {route?.code}
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900">Bus #{bus.number}</h3>
-                        <p className="text-sm text-gray-600">Driver: {bus.driver_name}</p>
+                        <h3 className="text-lg font-semibold text-slate-800">Bus #{bus.number}</h3>
+                        <p className="text-sm text-slate-600">Driver: {bus.driver_name}</p>
                       </div>
                     </div>
                     
-                    <div className="flex items-center space-x-6 text-sm text-gray-600">
+                    <div className="flex items-center space-x-6 text-sm text-slate-600">
                       <div className="flex items-center space-x-1">
                         <Clock className="h-4 w-4" />
                         <span>Arrives in {Math.floor((arrivalTime.getTime() - new Date().getTime()) / 60000)} min</span>
@@ -238,7 +238,7 @@ export const BusListings: React.FC<BusListingsProps> = ({
                         <span>{bus.current_occupancy}/{bus.capacity} passengers</span>
                       </div>
                       
-                      <span className="text-lg font-semibold text-green-600">
+                      <span className="text-lg font-semibold text-emerald-500">
                         ${route?.fare.toFixed(2)}
                       </span>
                     </div>
@@ -246,15 +246,15 @@ export const BusListings: React.FC<BusListingsProps> = ({
 
                   {/* Arrival Time & Status */}
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-gray-900 mb-1">
+                    <div className="text-2xl font-bold text-slate-800 mb-1">
                       {format(arrivalTime, 'HH:mm')}
                     </div>
                     <div className="flex items-center space-x-2">
                       <span 
                         className={`px-2 py-1 text-xs rounded-full ${
-                          occupancyInfo.color === 'green' ? 'bg-green-100 text-green-800' :
-                          occupancyInfo.color === 'yellow' ? 'bg-yellow-100 text-yellow-800' :
-                          'bg-red-100 text-red-800'
+                          occupancyInfo.color === 'green' ? 'bg-emerald-100 text-emerald-600' :
+                          occupancyInfo.color === 'yellow' ? 'bg-amber-100 text-amber-600' :
+                          'bg-rose-100 text-rose-600'
                         }`}
                       >
                         {occupancyInfo.text}
@@ -265,16 +265,16 @@ export const BusListings: React.FC<BusListingsProps> = ({
 
                 {/* Occupancy Bar */}
                 <div className="mt-4">
-                  <div className="flex items-center justify-between text-xs text-gray-600 mb-1">
+                  <div className="flex items-center justify-between text-xs text-slate-600 mb-1">
                     <span>Capacity</span>
                     <span>{Math.round(occupancyRate)}% full</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-slate-200 rounded-full h-2">
                     <div 
                       className={`h-2 rounded-full transition-all ${
-                        occupancyRate < 40 ? 'bg-green-500' :
-                        occupancyRate < 80 ? 'bg-yellow-500' :
-                        'bg-red-500'
+                        occupancyRate < 40 ? 'bg-emerald-400' :
+                        occupancyRate < 80 ? 'bg-amber-400' :
+                        'bg-rose-400'
                       }`}
                       style={{ width: `${occupancyRate}%` }}
                     ></div>
@@ -287,11 +287,11 @@ export const BusListings: React.FC<BusListingsProps> = ({
 
         {filteredBuses.length === 0 && (
           <div className="p-12 text-center">
-            <div className="text-gray-400 mb-4">
+            <div className="text-slate-400 mb-4">
               <Clock className="h-12 w-12 mx-auto" />
             </div>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">No buses found</h3>
-            <p className="text-gray-600">Try adjusting your filters or check back later.</p>
+            <h3 className="text-lg font-medium text-slate-700 mb-2">No buses found</h3>
+            <p className="text-slate-600">Try adjusting your filters or check back later.</p>
           </div>
         )}
       </div>

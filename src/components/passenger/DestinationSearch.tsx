@@ -110,19 +110,19 @@ export const DestinationSearch: React.FC<DestinationSearchProps> = ({
 
   return (
     <div className="max-w-md mx-auto p-6">
-      <div className="bg-white rounded-lg shadow-lg p-6">
+      <div className="bg-white rounded-xl shadow-md p-6 border border-blue-100">
         <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
           Plan Your Journey
         </h2>
         
         {/* From Location */}
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-slate-600 mb-2">
             From
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center">
-              <MapPin className="h-5 w-5 text-green-500" />
+              <MapPin className="h-5 w-5 text-emerald-400" />
             </div>
             <input
               type="text"
@@ -132,32 +132,32 @@ export const DestinationSearch: React.FC<DestinationSearchProps> = ({
                 setShowFromSuggestions(true);
               }}
               onFocus={() => setShowFromSuggestions(true)}
-              className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-10 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent bg-slate-50"
               placeholder="Enter starting location"
             />
             <button
               onClick={getCurrentLocation}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-blue-500 hover:text-blue-700"
+              className="absolute inset-y-0 right-0 pr-3 flex items-center text-blue-400 hover:text-blue-500"
             >
               <Navigation className="h-5 w-5" />
             </button>
             
             {showFromSuggestions && fromSuggestions.length > 0 && (
-              <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg">
+              <div className="absolute z-10 mt-1 w-full bg-white border border-slate-200 rounded-lg shadow-md">
                 {fromSuggestions.map((stop) => (
                   <button
                     key={stop.id}
                     onClick={() => handleFromSelect(stop)}
-                    className="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0"
+                    className="w-full text-left px-4 py-3 hover:bg-blue-25 border-b border-slate-100 last:border-b-0"
                   >
                     <div className="flex items-center">
-                      <MapPin className="h-4 w-4 text-gray-400 mr-2" />
+                      <MapPin className="h-4 w-4 text-slate-400 mr-2" />
                       <div>
-                        <p className="font-medium text-gray-900">{stop.name}</p>
-                        <p className="text-sm text-gray-500">{stop.address}</p>
+                        <p className="font-medium text-slate-700">{stop.name}</p>
+                        <p className="text-sm text-slate-500">{stop.address}</p>
                         <div className="flex space-x-1 mt-1">
                           {stop.routes.map(route => (
-                            <span key={route} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                            <span key={route} className="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full">
                               {route}
                             </span>
                           ))}
@@ -173,12 +173,12 @@ export const DestinationSearch: React.FC<DestinationSearchProps> = ({
 
         {/* To Location */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-slate-600 mb-2">
             To
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center">
-              <MapPin className="h-5 w-5 text-red-500" />
+              <MapPin className="h-5 w-5 text-rose-400" />
             </div>
             <input
               type="text"
@@ -188,26 +188,26 @@ export const DestinationSearch: React.FC<DestinationSearchProps> = ({
                 setShowToSuggestions(true);
               }}
               onFocus={() => setShowToSuggestions(true)}
-              className="w-full pl-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent bg-slate-50"
               placeholder="Enter destination"
             />
             
             {showToSuggestions && toSuggestions.length > 0 && (
-              <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg">
+              <div className="absolute z-10 mt-1 w-full bg-white border border-slate-200 rounded-lg shadow-md">
                 {toSuggestions.map((stop) => (
                   <button
                     key={stop.id}
                     onClick={() => handleToSelect(stop)}
-                    className="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0"
+                    className="w-full text-left px-4 py-3 hover:bg-blue-25 border-b border-slate-100 last:border-b-0"
                   >
                     <div className="flex items-center">
-                      <MapPin className="h-4 w-4 text-gray-400 mr-2" />
+                      <MapPin className="h-4 w-4 text-slate-400 mr-2" />
                       <div>
-                        <p className="font-medium text-gray-900">{stop.name}</p>
-                        <p className="text-sm text-gray-500">{stop.address}</p>
+                        <p className="font-medium text-slate-700">{stop.name}</p>
+                        <p className="text-sm text-slate-500">{stop.address}</p>
                         <div className="flex space-x-1 mt-1">
                           {stop.routes.map(route => (
-                            <span key={route} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                            <span key={route} className="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full">
                               {route}
                             </span>
                           ))}
@@ -225,7 +225,7 @@ export const DestinationSearch: React.FC<DestinationSearchProps> = ({
         <button
           onClick={handleSearch}
           disabled={!selectedFrom || !selectedTo}
-          className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center"
+          className="w-full bg-blue-400 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-500 disabled:bg-slate-300 disabled:cursor-not-allowed flex items-center justify-center transition-colors"
         >
           <Search className="h-5 w-5 mr-2" />
           Find Buses
@@ -234,7 +234,7 @@ export const DestinationSearch: React.FC<DestinationSearchProps> = ({
         {/* Recent Searches */}
         {recentSearches.length > 0 && (
           <div className="mt-8">
-            <h3 className="text-lg font-medium text-gray-900 mb-4 flex items-center">
+            <h3 className="text-lg font-medium text-slate-700 mb-4 flex items-center">
               <Clock className="h-5 w-5 mr-2" />
               Recent Searches
             </h3>
@@ -243,14 +243,14 @@ export const DestinationSearch: React.FC<DestinationSearchProps> = ({
                 <button
                   key={index}
                   onClick={() => handleRecentSearch(search.from, search.to)}
-                  className="w-full text-left p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="w-full text-left p-3 bg-blue-25 rounded-lg hover:bg-blue-50 transition-colors"
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-600">From: <span className="font-medium text-gray-900">{search.from}</span></p>
-                      <p className="text-sm text-gray-600">To: <span className="font-medium text-gray-900">{search.to}</span></p>
+                      <p className="text-sm text-slate-600">From: <span className="font-medium text-slate-700">{search.from}</span></p>
+                      <p className="text-sm text-slate-600">To: <span className="font-medium text-slate-700">{search.to}</span></p>
                     </div>
-                    <Search className="h-4 w-4 text-gray-400" />
+                    <Search className="h-4 w-4 text-slate-400" />
                   </div>
                 </button>
               ))}
