@@ -232,7 +232,7 @@ export const DestinationSearch: React.FC<DestinationSearchProps> = ({
         <button
           onClick={handleSearch}
           disabled={!selectedFrom || !selectedTo}
-          className="btn-primary w-full h-14 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+          className="btn-primary w-full h-14 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
         >
           <Search className="h-5 w-5 mr-3" />
           Find Available Buses
