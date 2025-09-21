@@ -137,37 +137,6 @@ export const BusListings: React.FC<BusListingsProps> = ({
           </div>
         </div>
 
-        {/* Filters */}
-        <div className="p-6 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-blue-50/30">
-          <div className="flex flex-wrap items-center gap-6">
-            <div className="flex items-center space-x-3">
-              <div className="p-2 bg-white rounded-lg shadow-sm">
-                <Filter className="h-4 w-4 text-slate-600" />
-              </div>
-              <span className="text-sm font-semibold text-slate-700">Filter & Sort:</span>
-            </div>
-            
-            <select
-              value={filterOccupancy}
-              onChange={(e) => setFilterOccupancy(e.target.value as any)}
-              className="input-modern text-sm py-2 px-4 min-w-[140px] shadow-sm"
-            >
-              <option value="all">All Occupancy</option>
-              <option value="low">🟢 Comfortable</option>
-              <option value="medium">🟡 Moderate</option>
-              <option value="high">🔴 Crowded</option>
-            </select>
-            
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as any)}
-              className="input-modern text-sm py-2 px-4 min-w-[140px] shadow-sm"
-            >
-              <option value="arrival">⏰ Sort by Arrival</option>
-              <option value="occupancy">👥 Sort by Occupancy</option>
-            </select>
-          </div>
-        </div>
 
         {/* Bus List */}
         <div className="divide-y divide-slate-100">
