@@ -194,7 +194,7 @@ export const BusListings: React.FC<BusListingsProps> = ({
                         {route?.code}
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-slate-800 mb-1">Bus #{bus.number}</h3>
+                        <h3 className="text-2xl font-bold text-slate-800 mb-1">Bus No.{bus.number}</h3>
                         <p className="text-sm text-slate-600 font-medium">Driver: {bus.driver_name}</p>
                       </div>
                     </div>
