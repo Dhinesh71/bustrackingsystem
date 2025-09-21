@@ -203,22 +203,6 @@ export const BusListings: React.FC<BusListingsProps> = ({
                 </div>
 
                 {/* Occupancy Bar */}
-                <div className="mt-6">
-                  <div className="flex items-center justify-between text-xs text-slate-600 mb-1">
-                    <span>Capacity</span>
-                    <span>{Math.round(occupancyRate)}% full</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div 
-                      className={`h-2 rounded-full transition-all duration-500 ${
-                        occupancyRate < 40 ? 'bg-emerald-400' :
-                        occupancyRate < 80 ? 'bg-amber-400' :
-                        'bg-rose-400'
-                      }`}
-                      style={{ width: `${occupancyRate}%` }}
-                    ></div>
-                  </div>
-                </div>
               </div>
             );
           })}
