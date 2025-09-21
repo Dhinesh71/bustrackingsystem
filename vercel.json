@@ -1,21 +1,8 @@
 {
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/backend/server.js" }
-  ],
-  "redirects": [
-    { "source": "/", "destination": "/index.html", "permanent": true }
+    { "source": "/api/(.*)", "destination": "/backend/server.js" },
+  { "source": "/((?!api|_next|static|favicon.ico|.*\\..*).*)", "destination": "/index.html" }
   ],
   "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    }
-  ],
-  "error": {
-    "404": "/index.html"
-  }
+  "trailingSlash": false
 }
