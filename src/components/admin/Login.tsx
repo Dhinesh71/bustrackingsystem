@@ -122,6 +122,7 @@ export const AdminLogin: React.FC = () => {
                 </p>
               </div>
             </div>
+          </div>
         </form>
       </div>
     </div>
