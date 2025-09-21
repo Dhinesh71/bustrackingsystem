@@ -16,28 +16,28 @@ export const Layout: React.FC<LayoutProps> = ({
   const { user, signOut } = useAuth();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-blue-25" style={{ backgroundColor: '#f8fafc' }}>
       {showNavigation && (
-        <header className="bg-white shadow-sm border-b border-gray-200">
+        <header className="bg-white shadow-sm border-b border-blue-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center space-x-3">
-                <Bus className="h-8 w-8 text-blue-600" />
-                <h1 className="text-xl font-bold text-gray-900">{title}</h1>
+                <Bus className="h-8 w-8 text-blue-500" />
+                <h1 className="text-xl font-bold text-slate-800">{title}</h1>
               </div>
               
               {user && (
                 <div className="flex items-center space-x-4">
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-slate-600">
                     Welcome, {user.name || user.email}
                   </span>
                   <div className="flex space-x-2">
-                    <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+                    <button className="p-2 text-slate-400 hover:text-slate-600 transition-colors">
                       <Settings className="h-5 w-5" />
                     </button>
                     <button
                       onClick={signOut}
-                      className="p-2 text-gray-400 hover:text-gray-600 transition-colors"
+                      className="p-2 text-slate-400 hover:text-slate-600 transition-colors"
                     >
                       <LogOut className="h-5 w-5" />
                     </button>

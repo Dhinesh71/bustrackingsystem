@@ -74,29 +74,29 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
   // Lite Mode Component
   const LiteModeView = () => (
     <div className="max-w-md mx-auto p-4">
-      <div className="bg-white rounded-lg shadow-lg p-6">
+      <div className="bg-white rounded-xl shadow-md p-6 border border-blue-100">
         <div className="text-center mb-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Bus #{currentBus.number}</h2>
-          <p className="text-gray-600">Route {currentBus.route_id}</p>
+          <h2 className="text-xl font-bold text-slate-800 mb-2">Bus #{currentBus.number}</h2>
+          <p className="text-slate-600">Route {currentBus.route_id}</p>
         </div>
 
         {/* ETA Display */}
         <div className="bg-blue-50 rounded-lg p-4 mb-6 text-center">
-          <div className="text-3xl font-bold text-blue-600 mb-1">
+          <div className="text-3xl font-bold text-blue-500 mb-1">
             {Math.floor((estimatedArrival.getTime() - new Date().getTime()) / 60000)} min
           </div>
-          <p className="text-sm text-gray-600">Estimated arrival at {toStop.name}</p>
+          <p className="text-sm text-slate-600">Estimated arrival at {toStop.name}</p>
         </div>
 
         {/* Next Stops */}
         <div className="space-y-3 mb-6">
-          <h3 className="font-semibold text-gray-900">Next Stops:</h3>
+          <h3 className="font-semibold text-slate-800">Next Stops:</h3>
           {nextStops.map((stop) => (
-            <div key={stop.id} className="flex justify-between items-center p-2 bg-gray-50 rounded">
-              <span className={`${stop.isDestination ? 'font-bold text-blue-600' : 'text-gray-900'}`}>
+            <div key={stop.id} className="flex justify-between items-center p-2 bg-blue-25 rounded">
+              <span className={`${stop.isDestination ? 'font-bold text-blue-500' : 'text-slate-800'}`}>
                 {stop.name}
               </span>
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-slate-600">
                 {Math.floor((stop.eta.getTime() - new Date().getTime()) / 60000)} min
               </span>
             </div>
@@ -107,13 +107,13 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
         <div className="space-y-2">
           <button
             onClick={() => setAlarm(5)}
-            className="w-full bg-blue-600 text-white py-2 rounded-lg font-medium"
+            className="w-full bg-blue-400 text-white py-2 rounded-lg font-medium hover:bg-blue-500 transition-colors"
           >
             Set 5-min Alert
           </button>
           <button
             onClick={() => setIsLiteMode(false)}
-            className="w-full border border-gray-300 text-gray-700 py-2 rounded-lg font-medium"
+            className="w-full border border-slate-200 text-slate-700 py-2 rounded-lg font-medium hover:bg-slate-50 transition-colors"
           >
             View Map
           </button>
@@ -142,7 +142,7 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
           
           <button
             onClick={() => setIsLiteMode(true)}
-            className="flex items-center space-x-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition-colors"
+            className="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition-colors"
           >
             <Smartphone className="h-4 w-4" />
             <span>Lite Mode</span>
@@ -151,42 +151,42 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
 
         {/* Status Bar */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div className="bg-white rounded-lg p-4 shadow-sm">
+          <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">ETA</span>
-              <Clock className="h-4 w-4 text-blue-500" />
+              <span className="text-sm text-slate-600">ETA</span>
+              <Clock className="h-4 w-4 text-blue-400" />
             </div>
-            <p className="text-2xl font-bold text-gray-900">
+            <p className="text-2xl font-bold text-slate-800">
               {Math.floor((estimatedArrival.getTime() - new Date().getTime()) / 60000)} min
             </p>
           </div>
           
-          <div className="bg-white rounded-lg p-4 shadow-sm">
+          <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">Speed</span>
-              <Navigation className="h-4 w-4 text-green-500" />
+              <span className="text-sm text-slate-600">Speed</span>
+              <Navigation className="h-4 w-4 text-emerald-400" />
             </div>
-            <p className="text-2xl font-bold text-gray-900">{currentBus.speed} km/h</p>
+            <p className="text-2xl font-bold text-slate-800">{currentBus.speed} km/h</p>
           </div>
           
-          <div className="bg-white rounded-lg p-4 shadow-sm">
+          <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">Occupancy</span>
-              <div className="text-blue-500">👥</div>
+              <span className="text-sm text-slate-600">Occupancy</span>
+              <div className="text-blue-400">👥</div>
             </div>
-            <p className="text-2xl font-bold text-gray-900">
+            <p className="text-2xl font-bold text-slate-800">
               {Math.round((currentBus.current_occupancy / currentBus.capacity) * 100)}%
             </p>
           </div>
           
-          <div className="bg-white rounded-lg p-4 shadow-sm">
+          <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">Status</span>
+              <span className="text-sm text-slate-600">Status</span>
               <div className={`w-3 h-3 rounded-full ${
-                currentBus.status === 'active' ? 'bg-green-500' : 'bg-gray-400'
+                currentBus.status === 'active' ? 'bg-emerald-400' : 'bg-slate-400'
               }`} />
             </div>
-            <p className="text-2xl font-bold text-gray-900 capitalize">{currentBus.status}</p>
+            <p className="text-2xl font-bold text-slate-800 capitalize">{currentBus.status}</p>
           </div>
         </div>
       </div>
@@ -207,8 +207,8 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
         {/* Sidebar */}
         <div className="space-y-6">
           {/* Alarms */}
-          <div className="bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-blue-100">
+            <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center">
               <Bell className="h-5 w-5 mr-2" />
               Arrival Alarms
             </h3>
@@ -216,12 +216,12 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
             <div className="space-y-3 mb-4">
               {activeAlarms.map((alarm) => (
                 <div key={alarm.id} className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
-                  <span className="text-sm text-blue-800">
+                  <span className="text-sm text-blue-600">
                     Alert {alarm.notification_time} min before arrival
                   </span>
                   <button
                     onClick={() => removeAlarm(alarm.id)}
-                    className="text-blue-600 hover:text-blue-800"
+                    className="text-blue-500 hover:text-blue-600"
                   >
                     ✕
                   </button>
@@ -232,13 +232,13 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
             <div className="space-y-2">
               <button
                 onClick={() => setAlarm(5)}
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-700"
+                className="w-full bg-blue-400 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-500 transition-colors"
               >
                 Set 5-min Alert
               </button>
               <button
                 onClick={() => setAlarm(10)}
-                className="w-full border border-blue-600 text-blue-600 py-2 px-4 rounded-lg text-sm hover:bg-blue-50"
+                className="w-full border border-blue-400 text-blue-500 py-2 px-4 rounded-lg text-sm hover:bg-blue-50 transition-colors"
               >
                 Set 10-min Alert
               </button>
@@ -246,31 +246,31 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
           </div>
 
           {/* Next Stops */}
-          <div className="bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Next Stops</h3>
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-blue-100">
+            <h3 className="text-lg font-semibold text-slate-800 mb-4">Next Stops</h3>
             <div className="space-y-3">
               {nextStops.map((stop, index) => (
                 <div key={stop.id} className={`p-3 rounded-lg border-2 transition-colors ${
-                  stop.isNext ? 'border-blue-500 bg-blue-50' : 
-                  stop.isDestination ? 'border-green-500 bg-green-50' :
-                  'border-gray-200'
+                  stop.isNext ? 'border-blue-400 bg-blue-50' : 
+                  stop.isDestination ? 'border-emerald-400 bg-emerald-50' :
+                  'border-slate-200'
                 }`}>
                   <div className="flex justify-between items-start">
                     <div>
                       <h4 className={`font-medium ${
-                        stop.isDestination ? 'text-green-800' : 'text-gray-900'
+                        stop.isDestination ? 'text-emerald-600' : 'text-slate-800'
                       }`}>
                         {stop.name}
-                        {stop.isNext && <span className="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">NEXT</span>}
-                        {stop.isDestination && <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-1 rounded">DESTINATION</span>}
+                        {stop.isNext && <span className="ml-2 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">NEXT</span>}
+                        {stop.isDestination && <span className="ml-2 text-xs bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full">DESTINATION</span>}
                       </h4>
-                      <p className="text-sm text-gray-600">{stop.address}</p>
+                      <p className="text-sm text-slate-600">{stop.address}</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-semibold text-gray-900">
+                      <p className="font-semibold text-slate-800">
                         {Math.floor((stop.eta.getTime() - new Date().getTime()) / 60000)} min
                       </p>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-slate-500">
                         {stop.eta.toLocaleTimeString('en-US', { 
                           hour: '2-digit', 
                           minute: '2-digit' 
