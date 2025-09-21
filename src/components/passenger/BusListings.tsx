@@ -185,9 +185,6 @@ export const BusListings: React.FC<BusListingsProps> = ({
 
                   {/* Arrival Time & Status */}
                   <div className="text-right ml-6">
-                    <div className="text-4xl font-bold text-slate-800 mb-2">
-                      {format(arrivalTime, 'HH:mm')}
-                    </div>
                     <div className="flex items-center justify-end space-x-2 mb-2">
                     </div>
                   </div>
