@@ -111,16 +111,6 @@ export const DestinationSearch: React.FC<DestinationSearchProps> = ({
   return (
     <div className="max-w-lg mx-auto p-6 animate-fade-in-up">
       <div className="card-elevated p-8">
-        <div className="text-center mb-8">
-          <div className="inline-flex p-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-lg mb-4">
-            <Bus className="h-8 w-8 text-white" />
-          </div>
-          <h2 className="text-3xl font-bold text-slate-800 mb-2">
-            Plan Your Journey
-          </h2>
-          <p className="text-slate-600">Find the perfect bus for your trip</p>
-        </div>
-        
         {/* From Location */}
         <div className="mb-6">
           <label className="block text-sm font-semibold text-slate-700 mb-3">
