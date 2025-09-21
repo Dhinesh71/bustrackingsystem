@@ -138,9 +138,18 @@ export const DestinationSearch: React.FC<DestinationSearchProps> = ({
                 setShowFromSuggestions(true);
               }}
               onFocus={() => setShowFromSuggestions(true)}
-              className="input-modern pl-14 pr-14 h-14 text-base group-hover:shadow-md"
+              className="input-modern pl-14 h-14 text-base group-hover:shadow-md"
               placeholder="Where are you starting from?"
             />
+            <button
+              onClick={getCurrentLocation}
+              className="absolute inset-y-0 right-0 pr-4 flex items-center text-blue-600 hover:text-blue-700 transition-colors"
+              title="Use current location"
+            >
+              <div className="p-2 hover:bg-blue-50 rounded-lg transition-colors">
+                <Navigation className="h-5 w-5" />
+              </div>
+            </button>
             
             {showFromSuggestions && fromSuggestions.length > 0 && (
               <div className="absolute z-20 mt-2 w-full bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
