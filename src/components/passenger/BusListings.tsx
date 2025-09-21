@@ -178,15 +178,6 @@ export const BusListings: React.FC<BusListingsProps> = ({
                         </span>
                       </div>
                       
-                      <div className="flex items-center space-x-2 bg-slate-50 px-3 py-2 rounded-xl">
-                        <div className="p-1 bg-slate-100 rounded-lg">
-                          <Users className="h-4 w-4 text-slate-600" />
-                        </div>
-                        <span className="font-semibold text-slate-700">
-                          {bus.current_occupancy}/{bus.capacity} passengers
-                        </span>
-                      </div>
-                      
                       <div className="bg-emerald-50 px-4 py-2 rounded-xl">
                       </div>
                     </div>
