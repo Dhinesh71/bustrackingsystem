@@ -27,37 +27,43 @@ export const AdminLogin: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-sky-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-lg w-full space-y-8 animate-fade-in-up">
         <div className="text-center">
-          <div className="flex justify-center">
-            <div className="bg-blue-400 rounded-full p-3 shadow-md">
-              <Bus className="h-8 w-8 text-white" />
+          <div className="flex justify-center mb-6">
+            <div className="p-6 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl shadow-2xl">
+              <Bus className="h-12 w-12 text-white" />
             </div>
           </div>
-          <h2 className="mt-6 text-3xl font-bold text-slate-800">Admin Portal</h2>
-          <p className="mt-2 text-sm text-slate-600">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent mb-3">
+            Admin Portal
+          </h2>
+          <p className="text-slate-600 text-lg">
             Sign in to access the fleet management dashboard
           </p>
         </div>
 
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="bg-white rounded-xl shadow-md p-8 border border-blue-100">
+        <form className="mt-10 space-y-6" onSubmit={handleSubmit}>
+          <div className="card-elevated p-10">
             {error && (
-              <div className="mb-4 p-4 bg-rose-50 border border-rose-200 rounded-lg flex items-center">
-                <AlertCircle className="h-5 w-5 text-rose-500 mr-2" />
-                <span className="text-rose-600 text-sm">{error}</span>
+              <div className="mb-6 p-5 bg-rose-50 border border-rose-200 rounded-2xl flex items-center">
+                <div className="p-2 bg-rose-100 rounded-xl mr-3">
+                  <AlertCircle className="h-5 w-5 text-rose-600" />
+                </div>
+                <span className="text-rose-700 font-medium">{error}</span>
               </div>
             )}
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-600 mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-3">
                   Email Address
                 </label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center">
-                    <User className="h-5 w-5 text-slate-400" />
+                <div className="relative group">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <div className="p-2 bg-slate-100 rounded-xl group-focus-within:bg-blue-100 transition-colors">
+                      <User className="h-5 w-5 text-slate-600 group-focus-within:text-blue-600" />
+                    </div>
                   </div>
                   <input
                     id="email"
@@ -66,19 +72,21 @@ export const AdminLogin: React.FC = () => {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full pl-10 pr-3 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent bg-slate-50"
+                    className="input-modern pl-16 h-14 text-base group-hover:shadow-md"
                     placeholder="admin@bustrack.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-slate-600 mb-2">
+                <label htmlFor="password" className="block text-sm font-semibold text-slate-700 mb-3">
                   Password
                 </label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center">
-                    <Lock className="h-5 w-5 text-slate-400" />
+                <div className="relative group">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <div className="p-2 bg-slate-100 rounded-xl group-focus-within:bg-blue-100 transition-colors">
+                      <Lock className="h-5 w-5 text-slate-600 group-focus-within:text-blue-600" />
+                    </div>
                   </div>
                   <input
                     id="password"
@@ -87,26 +95,32 @@ export const AdminLogin: React.FC = () => {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full pl-10 pr-3 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent bg-slate-50"
+                    className="input-modern pl-16 h-14 text-base group-hover:shadow-md"
                     placeholder="Enter your password"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-10">
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-blue-400 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-500 focus:ring-4 focus:ring-blue-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="btn-primary w-full h-14 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {loading ? 'Signing in...' : 'Sign In'}
               </button>
             </div>
 
-            <div className="mt-6 text-center">
-              <p className="text-xs text-slate-500">
+            <div className="mt-8 text-center">
+              <div className="p-4 bg-slate-50 rounded-2xl">
+                <p className="text-sm text-slate-600 font-medium">
+                  Demo Credentials
+                </p>
+                <p className="text-xs text-slate-500 mt-1">
                 Demo credentials: admin@bustrack.com / password123
+                </p>
+              </div>
               </p>
             </div>
           </div>
