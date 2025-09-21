@@ -121,9 +121,7 @@ export const AdminLogin: React.FC = () => {
                 Demo credentials: admin@bustrack.com / password123
                 </p>
               </div>
-              </p>
             </div>
-          </div>
         </form>
       </div>
     </div>

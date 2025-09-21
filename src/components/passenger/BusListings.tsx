@@ -158,7 +158,6 @@ export const BusListings: React.FC<BusListingsProps> = ({
                   <span className="font-semibold text-slate-800">{toStop.name}</span>
                 </div>
               </div>
-              </p>
             </div>
             
             {/* Date Selector */}
