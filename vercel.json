@@ -1,7 +1,8 @@
 {
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/backend/server.js" }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+    {
+        "source": "/(.*)",
+        "destination": "/"
+    }
+  ]
 }
