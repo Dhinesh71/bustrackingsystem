@@ -12,7 +12,7 @@ interface BusListingsProps {
 // Sample data
 const sampleRoutes: Route[] = [
   {
-    id: '1',
+    id: '00000000-0000-0000-0000-000000000001',
     name: 'Boothapadi - Mpnmjec Route',
     code: '1',
     color: '#2563EB',
@@ -25,9 +25,9 @@ const sampleRoutes: Route[] = [
 
 const sampleBuses: Bus[] = [
   {
-    id: '1',
+    id: '00000000-0000-0000-0000-000000000002',
     number: '1',
-    route_id: '1',
+    route_id: '00000000-0000-0000-0000-000000000001',
     driver_name: 'Raman Kumar',
     capacity: 45,
     current_occupancy: 18,
