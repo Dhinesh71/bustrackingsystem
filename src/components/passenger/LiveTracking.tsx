@@ -314,9 +314,10 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
                         {Math.floor((stop.eta.getTime() - new Date().getTime()) / 60000)} min
                       </p>
                       <p className="text-xs text-slate-500">
-                        {stop.eta.toLocaleTimeString('en-US', { 
+                        {stop.scheduledTime || stop.eta.toLocaleTimeString('en-US', { 
                           hour: '2-digit', 
-                          minute: '2-digit' 
+                          minute: '2-digit',
+                          hour12: false
                         })}
                       </p>
                     </div>
