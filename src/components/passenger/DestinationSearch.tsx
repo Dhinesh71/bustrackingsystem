@@ -19,8 +19,10 @@ const sampleStops: BusStop[] = [
   { id: '9', name: 'Erode BS', address: 'Erode Bus Stand, Erode District', latitude: 11.3410, longitude: 77.7172, routes: ['1'] },
   { id: '10', name: 'Savitha & G.H', address: 'Savitha & G.H, Erode District', latitude: 11.3420, longitude: 77.7180, routes: ['1'] },
   { id: '11', name: 'Diesel Shed', address: 'Diesel Shed, Erode District', latitude: 11.3430, longitude: 77.7190, routes: ['1'] },
-  { id: '12', name: 'ITI & K.K.Nagar', address: 'ITI & K.K.Nagar, Erode District', latitude: 11.3440, longitude: 77.7200, routes: ['1'] },
-  { id: '13', name: 'Mpnmjec', address: 'Mpnmjec College, Erode District', latitude: 11.3450, longitude: 77.7210, routes: ['1'] },
+  { id: '12', name: 'Kasipalayam', address: 'Kasipalayam, Erode District', latitude: 11.3435, longitude: 77.7195, routes: ['1'] },
+  { id: '13', name: 'ITI', address: 'ITI, Erode District', latitude: 11.3440, longitude: 77.7200, routes: ['1'] },
+  { id: '14', name: 'KK Nagar', address: 'KK Nagar, Erode District', latitude: 11.3445, longitude: 77.7205, routes: ['1'] },
+  { id: '15', name: 'Mpnmjec', address: 'Mpnmjec College, Erode District', latitude: 11.3450, longitude: 77.7210, routes: ['1'] },
 ];
 
 const recentSearches = [

@@ -23,8 +23,10 @@ const routeStops: BusStop[] = [
   { id: '9', name: 'Erode BS', address: 'Erode Bus Stand, Erode District', latitude: 11.3410, longitude: 77.7172, routes: ['1'] },
   { id: '10', name: 'Savitha & G.H', address: 'Savitha & G.H, Erode District', latitude: 11.3420, longitude: 77.7180, routes: ['1'] },
   { id: '11', name: 'Diesel Shed', address: 'Diesel Shed, Erode District', latitude: 11.3430, longitude: 77.7190, routes: ['1'] },
-  { id: '12', name: 'ITI & K.K.Nagar', address: 'ITI & K.K.Nagar, Erode District', latitude: 11.3440, longitude: 77.7200, routes: ['1'] },
-  { id: '13', name: 'Mpnmjec', address: 'Mpnmjec College, Erode District', latitude: 11.3450, longitude: 77.7210, routes: ['1'] },
+  { id: '12', name: 'Kasipalayam', address: 'Kasipalayam, Erode District', latitude: 11.3435, longitude: 77.7195, routes: ['1'] },
+  { id: '13', name: 'ITI', address: 'ITI, Erode District', latitude: 11.3440, longitude: 77.7200, routes: ['1'] },
+  { id: '14', name: 'KK Nagar', address: 'KK Nagar, Erode District', latitude: 11.3445, longitude: 77.7205, routes: ['1'] },
+  { id: '15', name: 'Mpnmjec', address: 'Mpnmjec College, Erode District', latitude: 11.3450, longitude: 77.7210, routes: ['1'] },
 ];
 
 export const LiveTracking: React.FC<LiveTrackingProps> = ({
@@ -47,12 +49,44 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
     
     if (currentStopIndex === -1 || destinationIndex === -1) return [];
     
-    return routeStops.slice(currentStopIndex, destinationIndex + 1).map((stop, index) => ({
-      ...stop,
-      eta: new Date(Date.now() + (3 + index * 4) * 60 * 1000), // Simplified ETA calculation
-      isNext: index === 1,
-      isDestination: stop.id === toStop.id
-    }));
+    // Schedule times for each stop (7:10 AM start)
+    const scheduleTimes = [
+      '07:10', // Boothapadi
+      '07:20', // Poonachi
+      '07:30', // Chithar
+      '07:40', // Bhavani BS
+      '07:50', // Kalingarayanpalayam
+      '07:55', // Lakshminagar
+      '08:10', // R.N.pudhur
+      '08:15', // Agraharam
+      '08:30', // Erode BS
+      '08:35', // Savitha & G.H
+      '08:40', // Diesel Shed
+      '08:45', // Kasipalayam
+      '08:50', // ITI
+      '08:55', // KK Nagar
+      '09:20'  // Mpnmjec
+    ];
+    
+    return routeStops.slice(currentStopIndex, destinationIndex + 1).map((stop, index) => {
+      const scheduleTime = scheduleTimes[currentStopIndex + index];
+      const [hours, minutes] = scheduleTime.split(':').map(Number);
+      const today = new Date();
+      const eta = new Date(today.getFullYear(), today.getMonth(), today.getDate(), hours, minutes);
+      
+      // If the time has passed today, assume it's for tomorrow
+      if (eta < new Date()) {
+        eta.setDate(eta.getDate() + 1);
+      }
+      
+      return {
+        ...stop,
+        eta,
+        scheduledTime: scheduleTime,
+        isNext: index === 1,
+        isDestination: stop.id === toStop.id
+      };
+    });
   };
 
   const nextStops = getNextStops();
