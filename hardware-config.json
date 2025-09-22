@@ -1,0 +1,73 @@
+{
+  "hardware_configuration": {
+    "server_url": "http://localhost:3001",
+    "api_endpoints": {
+      "gps_data": "/api/hardware/gps",
+      "status_check": "/api/hardware/status",
+      "heartbeat": "/api/hardware/heartbeat"
+    },
+    "authentication": {
+      "method": "API_KEY",
+      "header_name": "X-API-Key",
+      "key_format": "UUID",
+      "example": "12345678-1234-1234-1234-123456789abc"
+    },
+    "data_format": {
+      "gps_payload": {
+        "required_fields": ["latitude", "longitude"],
+        "optional_fields": [
+          "speed", "heading", "altitude", "accuracy",
+          "fuel_level", "engine_temperature", "passenger_count",
+          "door_status", "timestamp"
+        ],
+        "example": {
+          "latitude": 11.3410,
+          "longitude": 77.7172,
+          "speed": 35.5,
+          "heading": 90,
+          "altitude": 245.5,
+          "accuracy": 3.2,
+          "fuel_level": 75.5,
+          "engine_temperature": 82.3,
+          "door_status": {
+            "front": false,
+            "rear": false
+          },
+          "passenger_count": 23,
+          "timestamp": "2024-01-15T10:30:00Z"
+        }
+      },
+      "heartbeat_payload": {
+        "device_info": {
+          "firmware_version": "1.0.0",
+          "hardware_model": "GPS-TRACKER-V2",
+          "signal_strength": -65
+        },
+        "system_status": {
+          "cpu_usage": 45.2,
+          "memory_usage": 67.8,
+          "storage_usage": 23.1,
+          "battery_level": 89.5
+        }
+      }
+    },
+    "timing": {
+      "gps_update_interval": "10 seconds",
+      "heartbeat_interval": "60 seconds",
+      "connection_timeout": "10 seconds",
+      "retry_delay": "30 seconds"
+    },
+    "error_handling": {
+      "retry_attempts": 3,
+      "offline_storage": true,
+      "fallback_mode": "store_locally"
+    }
+  },
+  "setup_instructions": {
+    "step_1": "Get API key from admin panel at /admin/login",
+    "step_2": "Update API_KEY variable in your hardware code",
+    "step_3": "Update SERVER_URL to your actual server address",
+    "step_4": "Test connection using status endpoint",
+    "step_5": "Start sending GPS data every 10 seconds"
+  }
+}
