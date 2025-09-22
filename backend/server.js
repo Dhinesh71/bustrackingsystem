@@ -13,6 +13,10 @@ const { createClient } = require('@supabase/supabase-js');
 const WebSocket = require('ws');
 const cron = require('node-cron');
 
+// Import new route handlers
+const hardwareRoutes = require('./routes/hardware');
+const apiKeyRoutes = require('./routes/apiKeys');
+
 // Initialize Supabase client
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -504,6 +508,12 @@ app.get('/api/routes/:routeId', async (req, res) => {
     });
   }
 });
+
+// Hardware integration routes
+app.use('/api/hardware', hardwareRoutes);
+
+// API key management routes (admin only)
+app.use('/api/admin/api-keys', apiKeyRoutes);
 
 // Utility functions
 

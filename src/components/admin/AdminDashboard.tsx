@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
-import { Bus, MapPin, Clock, AlertTriangle, TrendingUp, Users } from 'lucide-react';
+import { Bus, MapPin, Clock, AlertTriangle, TrendingUp, Users, Key } from 'lucide-react';
 import { AnalyticsData, Alert } from '../../types';
+import { ApiKeyManagement } from './ApiKeyManagement';
 
 // Sample analytics data
 const sampleAnalytics: AnalyticsData = {
@@ -62,6 +63,7 @@ export const AdminDashboard: React.FC = () => {
   const [analytics, setAnalytics] = useState<AnalyticsData>(sampleAnalytics);
   const [alerts, setAlerts] = useState<Alert[]>(sampleAlerts);
   const [selectedTimeRange, setSelectedTimeRange] = useState<'24h' | '7d' | '30d'>('7d');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'api-keys'>('dashboard');
 
   const resolveAlert = (alertId: string) => {
     setAlerts(prev => prev.map(alert => 
@@ -85,7 +87,7 @@ export const AdminDashboard: React.FC = () => {
   return (
     <div className="space-y-8 animate-fade-in-up">
       {/* Header */}
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0 mb-8">
         <div>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent mb-2">
             Admin Dashboard
@@ -93,17 +95,51 @@ export const AdminDashboard: React.FC = () => {
           <p className="text-slate-600 text-lg">Real-time fleet management and analytics</p>
         </div>
         
-        <select
-          value={selectedTimeRange}
-          onChange={(e) => setSelectedTimeRange(e.target.value as any)}
-          className="input-modern px-6 py-3 min-w-[160px] shadow-sm"
-        >
-          <option value="24h">Last 24 Hours</option>
-          <option value="7d">Last 7 Days</option>
-          <option value="30d">Last 30 Days</option>
-        </select>
+        <div className="flex items-center space-x-4">
+          <select
+            value={selectedTimeRange}
+            onChange={(e) => setSelectedTimeRange(e.target.value as any)}
+            className="input-modern px-6 py-3 min-w-[160px] shadow-sm"
+          >
+            <option value="24h">Last 24 Hours</option>
+            <option value="7d">Last 7 Days</option>
+            <option value="30d">Last 30 Days</option>
+          </select>
+        </div>
       </div>
 
+      {/* Navigation Tabs */}
+      <div className="border-b border-gray-200">
+        <nav className="-mb-px flex space-x-8">
+          <button
+            onClick={() => setActiveTab('dashboard')}
+            className={`py-2 px-1 border-b-2 font-medium text-sm ${
+              activeTab === 'dashboard'
+                ? 'border-blue-500 text-blue-600'
+                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+          >
+            Dashboard
+          </button>
+          <button
+            onClick={() => setActiveTab('api-keys')}
+            className={`py-2 px-1 border-b-2 font-medium text-sm flex items-center ${
+              activeTab === 'api-keys'
+                ? 'border-blue-500 text-blue-600'
+                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+          >
+            <Key className="h-4 w-4 mr-2" />
+            API Keys
+          </button>
+        </nav>
+      </div>
+
+      {/* Tab Content */}
+      {activeTab === 'api-keys' ? (
+        <ApiKeyManagement />
+      ) : (
+        <>
       {/* Key Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="card p-8 hover:shadow-lg transition-all duration-300 group">
@@ -301,6 +337,8 @@ export const AdminDashboard: React.FC = () => {
           </table>
         </div>
       </div>
+        </>
+      )}
     </div>
   );
 };
