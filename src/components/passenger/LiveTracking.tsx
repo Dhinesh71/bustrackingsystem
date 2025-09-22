@@ -193,7 +193,7 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
         </div>
 
         {/* Status Bar */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
             <div className="flex items-center justify-between">
               <span className="text-sm text-slate-600">ETA</span>
@@ -210,16 +210,6 @@ export const LiveTracking: React.FC<LiveTrackingProps> = ({
               <Navigation className="h-4 w-4 text-emerald-400" />
             </div>
             <p className="text-2xl font-bold text-slate-800">{currentBus.speed} km/h</p>
-          </div>
-          
-          <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-slate-600">Occupancy</span>
-              <div className="text-blue-400">👥</div>
-            </div>
-            <p className="text-2xl font-bold text-slate-800">
-              {Math.round((currentBus.current_occupancy / currentBus.capacity) * 100)}%
-            </p>
           </div>
           
           <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
